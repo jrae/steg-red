@@ -1,0 +1,1 @@
+pref("extensions.steg-read.autorun", false);

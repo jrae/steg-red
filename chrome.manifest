@@ -1,0 +1,8 @@
+content     steg-read    chrome/content/
+content     steg-read    chrome/content/ contentaccessible=yes
+overlay chrome://browser/content/browser.xul chrome://steg-read/content/browser.xul
+
+locale	steg-read	en-US	locale/en-US/
+
+skin	steg-read	classic/1.0	skin/
+style	chrome://global/content/customizeToolbar.xul	chrome://steg-read/skin/skin.css

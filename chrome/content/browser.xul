@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://steg-read/skin/skin.css" type="text/css"?>
+<!DOCTYPE steg-read SYSTEM "chrome://steg-read/locale/translations.dtd">
+<overlay id="sample" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+		<script src="stegRead.js" />
+
+		<menupopup id="menu_ToolsPopup">
+			<menuitem label="&runstegread;" key="steg-read-run-key" oncommand="stegRead.run()"/>
+		</menupopup>
+
+		<keyset>
+			<key id="steg-read-run-key" modifiers="accel alt shift" key="L" oncommand="stegRead.run()"/>
+		</keyset>
+
+		<statusbar id="status-bar">
+			<statusbarpanel id="steg-read-status-bar-icon" class="statusbarpanel-iconic" src="chrome://steg-read/skin/status-bar.png" tooltiptext="&runstegread;" onclick="stegRead.run()" />
+		</statusbar>
+
+		<toolbarpalette id="BrowserToolbarPalette">
+			<toolbarbutton id="steg-read-toolbar-button" label="Steg Read" tooltiptext="&runstegread;" oncommand="stegRead.run()"/>
+		</toolbarpalette>
+</overlay>
