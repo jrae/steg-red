@@ -13,8 +13,8 @@ var stegRead = function () {
 		run : function () {
 			var head = content.document.getElementsByTagName("head")[0],
 				style = content.document.getElementById("steg-read-style"),
-				allLinks = content.document.getElementsByTagName("a"),
-				foundLinks = 0;
+				allImages = content.document.getElementsByTagName("img"),
+				foundImages = allImages.length;
 
 			if (!style) {
 				style = content.document.createElement("link");
@@ -25,18 +25,16 @@ var stegRead = function () {
 				head.appendChild(style);
 			}
 
-			for (var i=0, il=allLinks.length; i<il; i++) {
-				elm = allLinks[i];
-				if (elm.getAttribute("target")) {
-					elm.className += ((elm.className.length > 0)? " " : "") + "steg-read-selected";
-					foundLinks++;
-				}
+			for (var i=0, il=foundImages; i<il; i++) {
+				elm = allImages[i];
+				// console.log(.getAttribute("name"))
+				elm.className += ((elm.className.length > 0)? " " : "") + "steg-read-selected";
 			}
-			if (foundLinks === 0) {
-				alert("No links found with a target attribute");
+			if (foundImages === 0) {
+				alert("No images found");
 			}
 			else {
-				alert("Found " + foundLinks + " links with a target attribute");
+				alert("Found " + foundImages + " images with <img> tags");
 			}
 		}
 	};

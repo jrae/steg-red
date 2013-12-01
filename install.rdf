@@ -7,7 +7,7 @@
 		<em:name>Steg Read</em:name>
 		<em:version>1.0</em:version>
 		<em:type>2</em:type>
-		<em:creator>Robert Nyman</em:creator>
+		<em:creator>Jason Rae</em:creator>
 		<em:description>Finds links that have a target attribute</em:description>
 		<em:homepageURL>http://www.robertnyman.com/</em:homepageURL>
 		<em:optionsURL>chrome://steg-read/content/options.xul</em:optionsURL>
