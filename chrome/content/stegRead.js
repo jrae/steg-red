@@ -39,4 +39,4 @@ var stegRead = function () {
 		}
 	};
 }();
-window.addEventListener("load", steg-read.init, false);
+window.addEventListener("load", stegRead.init, false);
