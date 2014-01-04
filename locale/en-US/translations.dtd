@@ -1,1 +1,4 @@
 <!ENTITY runstegread "Run Steg Read">
+
+<!ENTITY steg.menu.title              "Steg Read">
+<!ENTITY steg.menu.find               "Find">

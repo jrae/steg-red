@@ -8,6 +8,17 @@
 			<menuitem label="&runstegread;" key="steg-read-run-key" oncommand="stegRead.run()"/>
 		</menupopup>
 
+		<popup id="contentAreaContextMenu">
+        <menu id="steg-context-menu" label="&steg.menu.title;"  insertafter="context-selectall"
+              onclick="Overlay.PopUpNode.init(event);">
+        	<menupopup>
+          	<menuitem id="steg-read-decrypt-menu-item"
+                    label="&steg.menu.find;"
+                    oncommand="stegRead.run()"/>
+        		</menupopup>
+        </menu>
+    </popup>
+
 		<keyset>
 			<key id="steg-read-run-key" modifiers="accel alt shift" key="L" oncommand="stegRead.run()"/>
 		</keyset>
