@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="chrome://global/skin/"  ?>
+<?xml-stylesheet href="chrome://steg-read/skin/skin.css" type="text/css"?>
+<!DOCTYPE steg-read SYSTEM "chrome://steg-read/locale/translations.dtd">
+<overlay id="steg-read-browser-overlay" xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+		<script type="application/x-javascript"
+      src="chrome://steg-read/content/stegRead.js" />
+
+		<menupopup id="menu_ToolsPopup">
+			<menuitem label="&runstegread;" key="steg-read-run-key" oncommand="StegRead.BrowserOverlay.run(event)"/>
+		</menupopup>
+
+		<popup id="contentAreaContextMenu">
+        <menu id="steg-context-menu" label="&steg.menu.title;"  insertafter="context-selectall"
+              onclick="Overlay.PopUpNode.init(event);">
+        	<menupopup>
+          	<menuitem id="steg-read-decrypt-menu-item"
+                    label="&steg.menu.find;"
+                    oncommand="StegRead.BrowserOverlay.find(event)"/>
+        		</menupopup>
+        </menu>
+    </popup>
+
+		<keyset>
+			<key id="steg-read-run-key" modifiers="accel alt shift" key="L" oncommand="StegRead.BrowserOverlay.run(event)"/>
+		</keyset>
+
+		<statusbar id="status-bar">
+			<statusbarpanel id="steg-read-status-bar-icon" class="statusbarpanel-iconic" src="chrome://steg-read/skin/status-bar.png" tooltiptext="&runstegread;" onclick="StegRead.BrowserOverlay.run(event)" />
+		</statusbar>
+
+		<toolbarpalette id="BrowserToolbarPalette">
+			<toolbarbutton id="steg-read-toolbar-button" label="&steg.menu.title;" tooltiptext="&runstegread;" oncommand="StegRead.BrowserOverlay.run(event)"/>
+		</toolbarpalette>
+</overlay>

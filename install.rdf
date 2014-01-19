@@ -3,13 +3,13 @@
      xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
 	<Description about="urn:mozilla:install-manifest">
-		<em:id>steg-read@jason.com</em:id>
+		<em:id>steg-read@communityred.org</em:id>
 		<em:name>Steg Read</em:name>
 		<em:version>1.0</em:version>
 		<em:type>2</em:type>
 		<em:creator>Jason Rae</em:creator>
 		<em:description>Finds links that have a target attribute</em:description>
-		<em:homepageURL>http://www.robertnyman.com/</em:homepageURL>
+		<em:homepageURL>http://www.communityred.org/</em:homepageURL>
 		<em:optionsURL>chrome://steg-read/content/options.xul</em:optionsURL>
 
 		<em:targetApplication>
