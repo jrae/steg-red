@@ -54,13 +54,17 @@ StegRead.BrowserOverlay = {
 			if (foundImages === 0) {
 				alert("No images found");
 			}
-			else {
-				alert("Found " + foundImages + " images with <img> tags");
-			}
+			// else {
+			// 	alert("Found " + foundImages + " images with <img> tags");
+			// }
 		},
 
 		find : function (event) {
 			console.log(StegRead.current_image_src);
+			window.open(
+			  "chrome://steg-read/content/story.xul",
+			  "steg-read-story",
+			  "chrome,centerscreen");
 		}
 };
 window.addEventListener("load", StegRead.BrowserOverlay.init(), false);
