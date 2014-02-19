@@ -14,13 +14,13 @@ StegRead.current_image_src = null;
 StegRead.BrowserOverlay = {
 
 		init : function () {
-			console.log("init");
+			console.log("init steg-read");
 			var autoRun = prefManager.getBoolPref("extensions.steg-read.autorun");
 			console.log(prefManager.getBoolPref("extensions.steg-read.autorun"));
 			gBrowser.addEventListener("load", function (event) {
 				var autoRun = prefManager.getBoolPref("extensions.steg-read.autorun");
 				if (autoRun) {
-					console.log("running after load")
+					// console.log("running after load")
 					StegRead.BrowserOverlay.run(event);
 				}
 			}, false);
@@ -54,17 +54,41 @@ StegRead.BrowserOverlay = {
 			if (foundImages === 0) {
 				alert("No images found");
 			}
+
+			// if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+   //  		httpRequest = new XMLHttpRequest();
+			// } else if (window.ActiveXObject) { // IE 8 and older
+			//   httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+			// }
+
+			// httpRequest.onreadystatechange = function(response){
+				// console.log(response);
+			// };
+
+			// $.ajax({
+	  //     url: questionSignificantPath(question),
+	  //     type: 'put',
+	  //     data: data,
+	  //     dataType: 'json',
+	  //     success: function() {
+   //      $(question).addClass('significant').
+   //        siblings('.value').removeClass('significant');
+   //    	}
+   //  	});
+
 			// else {
 			// 	alert("Found " + foundImages + " images with <img> tags");
 			// }
 		},
 
 		find : function (event) {
-			console.log(StegRead.current_image_src);
-			window.open(
+			var params = {inn: {url: StegRead.current_image_src}, out: null};
+			console.log("image src: ", StegRead.current_image_src);
+			var doc = window.openDialog(
 			  "chrome://steg-read/content/story.xul",
 			  "steg-read-story",
-			  "chrome,centerscreen");
+			  "chrome, dialog, modal, resizable=yes",
+			  params);
 		}
 };
 window.addEventListener("load", StegRead.BrowserOverlay.init(), false);

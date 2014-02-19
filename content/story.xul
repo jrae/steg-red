@@ -2,127 +2,34 @@
 <?xml-stylesheet type="text/css" href="chrome://global/skin/"  ?>
 <?xml-stylesheet href="chrome://steg-read/skin/skin.css" type="text/css"?>
 <!DOCTYPE steg-read SYSTEM "chrome://steg-read/locale/translations.dtd">
-<window
-  id="aligner-window" title="Box Alignment Example" orient="horizontal"
+<dialog
+  id="aligner-window" title="Steg Red Window" orient="horizontal"
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-  onload="Story.js.init();">
+  buttons="accept"
+  width="600"
+  height="200"
+  buttonlabelaccept="Find story"
+  onload="onLoad();"
+  ondialogaccept="return doOK();">
+
   <script type="application/x-javascript"
       src="chrome://steg-read/content/story.js" />
-  <box id="thebox" orient="horizontal" flex="1" align="start"
-       style="border: 1px solid black; margin: 1em; padding: 1em;">
-    <button id="b1" label="Cat"/>
-    <button id="b2" label="Parrot"/>
-    <button id="b3" label="Porcupine"/>
-  </box>
 
-  <groupbox>
-    <caption>
-      <label for="edititem" value="Edit:"/>
-      <menulist id="edititem" label="Box"
-                oncommand="Story.js.changeEditingItem(event.target.value);">
-        <menupopup>
-          <menuitem value="thebox" label="Box" selected="true"/>
-          <menuitem value="b1" label="Cat"/>
-          <menuitem value="b2" label="Parrot"/>
-          <menuitem value="b3" label="Porcupine"/>
-        </menupopup>
-      </menulist>
-    </caption>
-
-    <grid>
-      <columns>
-        <column/>
-        <column flex="1"/>
-      </columns>
-      <rows>
-        <row>
-          <label for="flexval" value="flex:"/>
-          <textbox id="flexval" value="1" onchange="Story.js.changeItem(event,'flex');"/>
-        </row>
-        <row>
-          <label for="flexgroupval" value="flexgroup:"/>
-          <textbox id="flexgroupval" onchange="Story.js.changeItem(event,'flexgroup');"/>
-        </row>
-        <row>
-          <label for="alignval" value="align:"/>
-          <menulist id="alignval" label="Stretch"
-                    oncommand="Story.js.changeItem(event,'align');">
-            <menupopup>
-              <menuitem value="---" label="(None)"/>
-              <menuitem value="start" label="Start"/>
-              <menuitem value="center" label="Center"/>
-              <menuitem value="end" label="End"/>
-              <menuitem value="baseline" label="Baseline"/>
-              <menuitem value="stretch" label="Stretch" selected="true"/>
-            </menupopup>
-          </menulist>
-        </row>
-        <row>
-          <label for="packval" value="pack:"/>
-          <menulist id="packval" label="Start"
-                    oncommand="Story.js.changeItem(event,'pack');">
-            <menupopup>
-              <menuitem value="---" label="(None)"/>
-              <menuitem value="start" label="Start" selected="true"/>
-              <menuitem value="center" label="Center"/>
-              <menuitem value="end" label="End"/>
-            </menupopup>
-          </menulist>
-        </row>
-        <row>
-          <label for="orientval" value="orient:"/>
-          <menulist id="orientval" label="Horizontal"
-                    oncommand="Story.js.changeItem(event,'orient');">
-            <menupopup>
-              <menuitem value="---" label="(None)"/>
-              <menuitem value="horizontal" label="Horizontal" selected="true"/>
-              <menuitem value="vertical" label="Vertical"/>
-            </menupopup>
-          </menulist>
-        </row>
-        <row>
-          <label for="dirval" value="dir:"/>
-          <menulist id="dirval" label="Dir"
-                    oncommand="Story.js.changeItem(event,'dir');">
-            <menupopup>
-              <menuitem value="---" label="(None)"/>
-              <menuitem value="ltr" label="ltr" selected="true"/>
-              <menuitem value="rtl" label="rtl"/>
-            </menupopup>
-          </menulist>
-        </row>
-        <row>
-          <label for="ordinalval" value="ordinal:"/>
-          <textbox id="ordinalval" value="0" onchange="Story.js.changeItem(event,'ordinal');"/>
-        </row>
-        <row>
-          <label for="widthval" value="width:"/>
-          <textbox id="widthval" value="0" onchange="Story.js.changeStyle(event,'width');"/>
-        </row>
-        <row>
-          <label for="minwidthval" value="minwidth:"/>
-          <textbox id="minwidthval" value="0" onchange="Story.js.changeStyle(event,'min-width');"/>
-        </row>
-        <row>
-          <label for="maxwidthval" value="maxwidth:"/>
-          <textbox id="maxwidthval" value="0" onchange="Story.js.changeStyle(event,'max-width');"/>
-        </row>
-        <row>
-          <label for="heightval" value="height:"/>
-          <textbox id="heightval" value="0" onchange="Story.js.changeStyle(event,'height');"/>
-        </row>
-        <row>
-          <label for="minheightval" value="minheight:"/>
-          <textbox id="minheightval" value="0" onchange="Story.js.changeStyle(event,'min-height');"/>
-        </row>
-        <row>
-          <label for="maxheightval" value="maxheight:"/>
-          <textbox id="maxheightval" value="0" onchange="Story.js.changeStyle(event,'max-height');"/>
-        </row>
-      </rows>
-    </grid>
-
-  </groupbox>
-
-</window>
+  <grid style="border: 1px solid black; margin: 1em; padding: 1em;">
+    <columns><column/><column/></columns>
+    <rows>
+      <row align="center"><label value="Image Url:"/><textbox id="stegred-src-url"/></row>
+      <row align="center">
+        <groupbox>
+          <caption label="Which Algorithm(s)"/>
+          <radiogroup>
+            <radio label="All" selected="true"/>
+            <radio label="F5"/>
+            <radio label="super-tight-algorithm"/>
+          </radiogroup>
+        </groupbox>
+      </row>
+    </rows>
+  </grid>
+</dialog>
 
